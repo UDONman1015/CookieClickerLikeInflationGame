@@ -20,6 +20,15 @@ public class PlayerUI : MonoBehaviour
     [Header("所持アイテムテキスト")]
     [SerializeField] Text PossessionItemText;
 
+    [Header("クリック時に追加ソウルを表示するオブジェクトのプレハブ")]
+    [SerializeField] OnClickSoulButtonObject OnClickSoulButtonObjectPrefab;
+
+    [Header("親キャンバス")]
+    [SerializeField] Canvas canvas;
+
+    [Header("カメラ")]
+    [SerializeField] Camera MainCamera;
+
     //表示するプレイヤーの情報
     private Player player;
 
@@ -80,5 +89,33 @@ public class PlayerUI : MonoBehaviour
     {
         //毎フレーム自動的にプレイヤーの情報をUIに反映
         ShowPlayerInfo();
+    }
+
+    //クリック時に獲得ソウル量を表示するオブジェクトを生成
+    public void CreateOnClickSoulButtonObject()
+    {
+        OnClickSoulButtonObject onClickSoulButtonObject = Instantiate(OnClickSoulButtonObjectPrefab, canvas.transform);
+
+        onClickSoulButtonObject.transform.localPosition = GetLocalPosition(Input.mousePosition, canvas.transform);
+
+        onClickSoulButtonObject.Init(player.SoulPerClick);
+    }
+
+    //マウス座標をキャンバスのローカル座標に変換
+    public Vector3 GetLocalPosition(Vector3 position, Transform transform)
+    {
+        if (MainCamera != null)
+        {
+            // Converts coordinates on the screen (Screen Point) to local coordinates on the RectTransform
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                transform.GetComponent<RectTransform>(),
+                position,
+                MainCamera,
+                out var result);
+            return new Vector3(result.x, result.y, 0);
+        }
+
+        return Vector3.zero;
+
     }
 }

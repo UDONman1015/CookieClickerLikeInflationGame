@@ -24,8 +24,7 @@ public class Gacha : MonoBehaviour
     [Header("ガチャ情報表示")]
     [SerializeField] GachaUI gachaUI;
 
-    //ゲーム開始時に自動的に1度だけ呼ばれる
-    private void Start()
+    public void InitGacha()
     {
         //GachaUIをこのガチャ自身の情報で初期化
         gachaUI?.InitGachaUI(this);

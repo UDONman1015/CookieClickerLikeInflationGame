@@ -28,17 +28,6 @@ public class Player : MonoBehaviour
     [Header("プレイヤー情報表示")]
     [SerializeField] PlayerUI playerUI;
 
-    //ゲーム開始時に自動的に1度だけ呼ばれる
-    private void Start()
-    {
-        InitPlayer();
-
-        //PlayerUIをこのプレイヤー自身の情報で初期化
-        playerUI?.InitPlayerUI(this);
-
-        StartCoroutine(AddSoulPerSecondCoroutine());
-    }
-
     //プレイヤーの初期化
     public void InitPlayer()
     {
@@ -50,6 +39,11 @@ public class Player : MonoBehaviour
 
         //所持ソウルを0にする
         Soul = 0;
+
+        //PlayerUIをこのプレイヤー自身の情報で初期化
+        playerUI?.InitPlayerUI(this);
+
+        StartCoroutine(AddSoulPerSecondCoroutine());
     }
 
     //装備リスト(所持ガチャアイテムリストの中から装備だけを抽出)

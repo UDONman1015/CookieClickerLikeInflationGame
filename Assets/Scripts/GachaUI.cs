@@ -10,7 +10,8 @@ public class GachaUI : MonoBehaviour
     //[SerializeField] を入れるとインスペクターから値を編集可能になる
     //privateな変数は外部のスクリプトから参照されない
 
-    //ガチャを回すボタンの親
+    //Transform:座標・開店などを制御するコンポーネント
+    [Header("ガチャを回すボタンの親")]
     [SerializeField] Transform GachaButtonsParent;
 
     //表示するガチャの情報
