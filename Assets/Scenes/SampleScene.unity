@@ -769,18 +769,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 797535172}
   gachaItemList:
-  - {fileID: 11400000, guid: 2cc41d9f9e35f7a46a4eeb6f5610ad64, type: 2}
-  - {fileID: 11400000, guid: 77a4407e5ba8ecb48bde814997e70f55, type: 2}
-  - {fileID: 11400000, guid: c0bc6176648846b49a93c1e6e9819279, type: 2}
-  - {fileID: 11400000, guid: 029c694c9d81b61488c91f340d20f533, type: 2}
-  - {fileID: 11400000, guid: 89e41b2d972579d4b9b7cbf0cb6b9b59, type: 2}
-  - {fileID: 11400000, guid: 398c0826c4817124d8d147dbe116369e, type: 2}
   - {fileID: 11400000, guid: bd3e27c226a781f42b646b842839192e, type: 2}
   - {fileID: 11400000, guid: 2f3d46562549a694bb42b3c9e71d27a1, type: 2}
   - {fileID: 11400000, guid: 8c346aa37cff29f43902afbdce68fb0b, type: 2}
   - {fileID: 11400000, guid: 69a9a3ce1ff8b2b46b878253771b887e, type: 2}
   - {fileID: 11400000, guid: 575b9c3c8d54533438e689dd55dfa70e, type: 2}
   - {fileID: 11400000, guid: 6a31af4d1eba17544a70e7fd858c7b16, type: 2}
+  - {fileID: 11400000, guid: e2e4befb1bc841946974bff99731dcf2, type: 2}
+  - {fileID: 11400000, guid: cc1ff10568b58ae4eb031f5f04612764, type: 2}
+  - {fileID: 11400000, guid: edb2e40bf8fe6cf4f965efa2afda5542, type: 2}
+  - {fileID: 11400000, guid: 6e265c8af8f511f4dbe84438ec857e99, type: 2}
+  - {fileID: 11400000, guid: bae71816f2afa954bbef262190399003, type: 2}
+  - {fileID: 11400000, guid: a9995112b2a43034f94fdc90f1bddb2c, type: 2}
   EmissionRateTables:
   - rarity: 0
     EmissionRate: 0.4

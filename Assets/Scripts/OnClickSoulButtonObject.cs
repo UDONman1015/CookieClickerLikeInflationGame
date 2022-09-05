@@ -17,7 +17,6 @@ public class OnClickSoulButtonObject : MonoBehaviour
     Text text;
     public void Init(int soul)
     {
-        
         text = GetComponent<Text>();
 
         if(text != null)
@@ -45,7 +44,6 @@ public class OnClickSoulButtonObject : MonoBehaviour
 
         sequence
             .Append(this.transform.DOLocalMove(new Vector2(StartLocalPosition.x + plusX / 2f, StartLocalPosition.y + plusY), waitTime/2f))
-            //.Append(DOTween.To(() => text.color, (x) => text.color = x, new Color(startColor.r, startColor.g, startColor.b, 0), waitTime/2f).SetEase(Ease.OutCubic))
             .AppendCallback(() => end = true);
 
         sequence.Play();

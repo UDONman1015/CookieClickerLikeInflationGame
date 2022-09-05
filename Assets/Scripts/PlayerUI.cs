@@ -50,12 +50,25 @@ public class PlayerUI : MonoBehaviour
             PossessionItemText.text = "・所持アイテム";
 
             //プレイヤーのアイテムリストを重複なしリストにしてコピー
-            List<GachaItem> DistinctPossessionItemss = player.PossessionItems.Distinct().ToList();
+            player.PossessionItems = player.PossessionItems.OrderBy((gachaItem) => (int)gachaItem.ITemRarity).ToList();
+            List <GachaItem> DistinctPossessionItemss = player.PossessionItems.Distinct().ToList();
 
-            //装備を先に列挙
+            //施設を列挙
             foreach (GachaItem item in DistinctPossessionItemss)
             {
-                if(item is Equipment)
+                if (item is Facility)
+                {
+                    if (player.PossessionFacilities.Contains((Facility)item))
+                    {
+                        PossessionItemText.text += $"\n{item.ItemName}×{player.PossessionItems.Count((_item) => _item.ItemName == item.ItemName)}";
+                    }
+                }
+            }
+
+            //装備を列挙
+            foreach (GachaItem item in DistinctPossessionItemss)
+            {
+                if (item is Equipment)
                 {
                     if (player.Equipments.Contains((Equipment)item))
                     {
@@ -64,16 +77,15 @@ public class PlayerUI : MonoBehaviour
                 }
             }
 
-            //装備以外のアイテムを列挙
+            //施設・装備以外のアイテムを列挙
             foreach (GachaItem item in DistinctPossessionItemss)
             {
-                if (!(item is Equipment))
+                if (!(item is Equipment) && !(item is Facility))
                 {
                     PossessionItemText.text += $"\n{item.ItemName}×{player.PossessionItems.Count((_item) => _item.ItemName == item.ItemName)}";
                 }
             }
         }
-
 
         //プレイヤーの情報がセットされていなければ非表示
         else

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //施設
-[CreateAssetMenu(menuName = "Create/施設", fileName = "施設")]
+[CreateAssetMenu(menuName = "Create/ガチャアイテム/施設", fileName = "施設")]
+
 public class Facility : GachaItem
 {
     //[SerializeField] を入れるとインスペクターから値を編集可能になる

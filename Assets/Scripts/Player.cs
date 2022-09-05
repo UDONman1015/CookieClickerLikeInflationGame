@@ -14,9 +14,6 @@ public class Player : MonoBehaviour
     [Header("所持ガチャアイテムリスト")]
     public List<GachaItem> PossessionItems = new List<GachaItem>();
 
-    [Header("所持施設リスト")]
-    [SerializeField] List<Facility> PossessionFacilities = new List<Facility>();
-
     //public変数は[SerializeField]を入れなくてもインスペクターから値を編集可能になる
     //int:整数
     [Header("所持ソウル")]
@@ -34,9 +31,6 @@ public class Player : MonoBehaviour
         //所持ガチャアイテムリストを空にする
         PossessionItems = new List<GachaItem>();
 
-        //所持施設リストを空にする
-        PossessionFacilities = new List<Facility>();
-
         //所持ソウルを0にする
         Soul = 0;
 
@@ -46,7 +40,7 @@ public class Player : MonoBehaviour
         StartCoroutine(AddSoulPerSecondCoroutine());
     }
 
-    //装備リスト(所持ガチャアイテムリストの中から装備だけを抽出)
+    //所持装備リスト(所持ガチャアイテムリストの中から装備だけを抽出)
     public List<Equipment> Equipments
     {
         get
@@ -67,6 +61,29 @@ public class Player : MonoBehaviour
             return equipments;
         }
     }
+
+    //所持施設リストリスト(所持ガチャアイテムリストの中から装備だけを抽出)
+    public List<Facility> PossessionFacilities
+    {
+        get
+        {
+            List<Facility> prossessionFacilities = new List<Facility>();
+
+            foreach (GachaItem gachaItem in PossessionItems)
+            {
+                if (gachaItem != null)
+                {
+                    if (gachaItem is Facility)
+                    {
+                        prossessionFacilities.Add((Facility)gachaItem);
+                    }
+                }
+            }
+
+            return prossessionFacilities;
+        }
+    }
+
 
     //プレイヤーの1クリックあたりのソウル獲得量
     public int SoulPerClick
