@@ -5,6 +5,8 @@ using UnityEngine;
 //ゲームマネージャ
 public class GManager : MonoBehaviour
 {
+    [SerializeField] Canvas canvas;
+
     [Header("プレイヤー")]
     public Player player;
 
@@ -25,7 +27,6 @@ public class GManager : MonoBehaviour
     }
 
     //ゲーム開始時に自動的に1度だけ呼ばれる
-
     private void Start()
     {
         player.InitPlayer();
