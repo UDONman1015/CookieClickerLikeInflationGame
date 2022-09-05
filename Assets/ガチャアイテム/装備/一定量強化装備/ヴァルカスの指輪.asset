@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 286e4dcfb5ed87742a9eb6742cf8322d, type: 3}
+  m_Name: "\u30F4\u30A1\u30EB\u30AB\u30B9\u306E\u6307\u8F2A"
+  m_EditorClassIdentifier: Assembly-CSharp::Equipment_IncreaseInFixedAmount
+  itemRarity: 0
+  increaseSoulPerClickAmount: 0.5
